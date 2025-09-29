@@ -29,38 +29,14 @@
 </style>
 </head>
 <body>
+    <button onclick="playSound()">Reproducir Sonido</button>
+    <audio id="audio" src="https://github.com/6304293-maker/mis-im-genes/blob/Sonidos/audio1"></audio>
 
-<button id="note1"></button>
-
-<audio id="note1" src="audio1"></audio>
-
-<script>
-const btn = document.getElementById('note1');
-const audio = document.getElementById('audio1');
-
-// Para ordenador
-btn.addEventListener('mousedown', () => {
-  audio.currentTime = 0;
-  audio.play();
-});
-
-btn.addEventListener('mouseup', () => {
-  audio.pause();
-  audio.currentTime = 0;
-});
-
-// Para móvil
-btn.addEventListener('touchstart', (e) => {
-  e.preventDefault(); // evita que el botón haga scroll
-  audio.currentTime = 0;
-  audio.play();
-});
-
-btn.addEventListener('touchend', () => {
-  audio.pause();
-  audio.currentTime = 0;
-});
-</script>
-
+    <script>
+        function playSound() {
+            const audio = document.getElementById('audio');
+            audio.play();
+        }
+    </script>
 </body>
 </html>
